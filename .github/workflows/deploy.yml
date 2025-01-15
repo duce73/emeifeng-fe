@@ -27,8 +27,14 @@ jobs:
       with:
         ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
+    - name: Clean target directory on server
+      env:
+        SSH_AUTH_SOCK: ${{ secrets.SSH_AUTH_SOCK }}
+      run: |
+        ssh -o StrictHostKeyChecking=no ubuntu@81.70.198.221 "sudo rm -rf /var/www/example/*"
+
     - name: Deploy to Server
       env:
         RSYNC_RSH: 'ssh -o StrictHostKeyChecking=no'
       run: |
-        rsync -avz --delete ./dist/ ubuntu@81.70.198.221:/var/www/example.com/
+        rsync -avz --delete ./dist/ ubuntu@81.70.198.221:/var/www/example/
