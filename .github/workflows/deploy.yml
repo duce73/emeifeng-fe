@@ -31,4 +31,4 @@ jobs:
       env:
         RSYNC_RSH: 'ssh -o StrictHostKeyChecking=no'
       run: |
-        rsync -avz --delete ./dist/ username@server-ip:/path/to/your/target-directory
+        rsync -avz --delete ./dist/ ubuntu@81.70.198.221:/var/www/example.com/
