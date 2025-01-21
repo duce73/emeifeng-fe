@@ -4,4 +4,8 @@ dist
 coverage
 public
 auto-imports.d.ts
-components.d.ts 
+components.d.ts
+stylelint.config.js
+.stylelintrc.js
+.stylelintrc.cjs
+.stylelintrc.mjs

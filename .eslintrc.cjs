@@ -24,5 +24,6 @@ module.exports = {
     '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
     'semi': 'off',
     '@typescript-eslint/semi': ['error', 'always']
-  }
+  },
+  ignorePatterns: ['stylelint.config.js', '.stylelintrc.*']
 };
